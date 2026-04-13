@@ -7,4 +7,6 @@ def standarized_gender_f(gender):
         return gender
     
 
-    df['new_gender'] = df['GENDER'].apply(standarized_gender)
+def clean_column_names_f(df):
+    df.columns.str.strip().str.replace('_', ' ').str.title()
+    return df
